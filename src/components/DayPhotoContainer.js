@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import DayPhoto from './DayPhoto';
 import axios from 'axios';
+import Example from './Example';
+
 
 export default function DayPhotoContainer () {
     const [photo, setPhoto] = useState([]);
@@ -16,13 +18,22 @@ export default function DayPhotoContainer () {
 });
     }, []);
         return (
+
             <div>
-                <DayPhoto 
-                key={photo.date}
-                date={photo.date}
+            <DayPhoto 
+             image={photo.hdurl}
+           />
+             
+                <Example 
+            
+                 
+                 date={photo.date}
                 explanation={photo.explanation}
                 title={photo.title}
-                url={photo.url} />
+                copyright={photo.copyright}
+
+                 />
+
                 
             </div>
         );   
